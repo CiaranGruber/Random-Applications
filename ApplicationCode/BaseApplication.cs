@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 namespace ApplicationCode
 {
     /// <summary>
-    /// Contains the class for the base application including variables, etc
+    /// Contains the code for the base application including variables, etc
     /// </summary>
     public class BaseApplication
     {
@@ -15,6 +16,19 @@ namespace ApplicationCode
         /// Contains the variable used for randomising values
         /// </summary>
         private Random rand { get; set; }
+
+        /// <summary>
+        /// The starting save folder name for the save info
+        /// </summary>
+        public static readonly string SaveFolder = "./Save Data";
+
+        /// <summary>
+        /// Loads the base application by creating relevant folders
+        /// </summary>
+        public BaseApplication()
+        {
+            Directory.CreateDirectory(SaveFolder);
+        }
 
         /// <summary>
         /// Returns a non-negative random integer

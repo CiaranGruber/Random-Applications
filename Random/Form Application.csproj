@@ -47,6 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AvailableForms.cs" />
+    <Compile Include="GeneralControlUtils.cs" />
+    <Compile Include="ListRandomiser\ListRandomiserMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListRandomiser\ListRandomiserMenu.Designer.cs">
+      <DependentUpon>ListRandomiserMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +68,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ListRandomiser\ListRandomiserMenu.resx">
+      <DependentUpon>ListRandomiserMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Menu.resx">
+      <DependentUpon>Main Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Navigation.resx">
       <DependentUpon>Navigation.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +103,10 @@
     <ProjectReference Include="..\ApplicationCode\Application Code.csproj">
       <Project>{fd920d3e-a767-4e52-ad5f-2922fe8e7186}</Project>
       <Name>Application Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\General Utilities.csproj">
+      <Project>{521573bd-aa1d-44c7-8c7d-87a300e343af}</Project>
+      <Name>General Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

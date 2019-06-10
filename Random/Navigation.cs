@@ -27,6 +27,8 @@ namespace Random
         {
             InitializeComponent();
             SaveNextForm(startingForm);
+            CenterToScreen();
+            Application = new BaseApplication();
         }
         
         private void Navigation_Load(object sender, EventArgs e)
@@ -37,14 +39,26 @@ namespace Random
 
                 if (NextForm.Item1 == Forms.MainMenu)
                 {
-
+                    newForm = new MainMenu();
                 }
+                else if (NextForm.Item1 == Forms.ListRandomiser)
+                {
+                    newForm = new ListRandomiser.ListRandomiserMenu();
+                }
+                else
+                {
+                    newForm = new Form();
+                }
+
+                // Quits application by default if the next form isn't set
+                SaveNextForm(Forms.Quit);
 
                 Hide();
                 newForm.ShowDialog();
 
                 Show();
             }
+            Close();
         }
 
         /// <summary>

@@ -19,6 +19,12 @@ namespace Random
         /// <summary>
         /// The form for the main menu
         /// </summary>
-        MainMenu
+        MainMenu,
+
+        /// <summary>
+        /// The list randomiser application
+        /// </summary>
+        ListRandomiser
     }
+
 }
