@@ -1,4 +1,4 @@
-﻿namespace Random
+﻿namespace FormApplication
 {
     partial class Navigation
     {

@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ApplicationCode;
 using FormUtilities;
 
-namespace Random
+namespace FormApplication
 {
     public partial class MainMenu : Form
     {
@@ -34,9 +35,11 @@ namespace Random
         {
             InitializeComponent();
             CenterToScreen();
+
+            LoadChoices();
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
+        private void LoadChoices()
         {
             // Set the next form to quit
             Navigation.SaveNextForm(Forms.Quit);
@@ -136,7 +139,14 @@ namespace Random
             Tuple<string, string> groupNameToFormName = new Tuple<string, string>(convertedSender.Name.Split('|')[0], convertedSender.Name.Split('|')[1]);
 
             // Save next form to open and close menu
-            Navigation.SaveNextForm(GroupNameToGroup[groupNameToFormName.Item1][groupNameToFormName.Item2]);
+            if (GroupNameToGroup[groupNameToFormName.Item1][groupNameToFormName.Item2] == Forms.ListRandomiser)
+            {
+                Navigation.SaveNextForm(GroupNameToGroup[groupNameToFormName.Item1][groupNameToFormName.Item2], new List<object> { new ListRandomiserApp() });
+            }
+            else
+            {
+                Navigation.SaveNextForm(GroupNameToGroup[groupNameToFormName.Item1][groupNameToFormName.Item2]);
+            }
             Close();
         }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ApplicationCode;
 
-namespace Random
+namespace FormApplication
 {
      public partial class Navigation : Form
     {
@@ -21,7 +21,7 @@ namespace Random
         /// <summary>
         /// Gets the data for the next form to be opened
         /// </summary>
-        public static Tuple<Forms, List<string>> NextForm { get; private set; }
+        public static Tuple<Forms, List<object>> NextForm { get; private set; }
 
         public Navigation(Forms startingForm)
         {
@@ -43,7 +43,11 @@ namespace Random
                 }
                 else if (NextForm.Item1 == Forms.ListRandomiser)
                 {
-                    newForm = new ListRandomiser.ListRandomiserMenu();
+                    newForm = new ListRandomiser.ListRandomiserMenu(NextForm.Item2[0] as ListRandomiserApp);
+                }
+                else if (NextForm.Item1 == Forms.ListRandomiser_ModifyList)
+                {
+                    newForm = new ListRandomiser.ListRandomiser_ModifyList(NextForm.Item2[0] as ListRandomiserApp);
                 }
                 else
                 {
@@ -75,9 +79,9 @@ namespace Random
         /// </summary>
         /// <param name="nextForm">The next form that is to be opened</param>
         /// <param name="formData">The data needed for the next form</param>
-        public static void SaveNextForm(Forms nextForm, List<string> formData)
+        public static void SaveNextForm(Forms nextForm, List<object> formData)
         {
-            NextForm = new Tuple<Forms, List<string>>(nextForm, formData);
+            NextForm = new Tuple<Forms, List<object>>(nextForm, formData);
         }
     }
 }

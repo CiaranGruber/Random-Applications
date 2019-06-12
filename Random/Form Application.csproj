@@ -7,8 +7,8 @@
     <ProjectGuid>{72AB7C70-1243-4755-BBEB-37BFF4721168}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Random</RootNamespace>
-    <AssemblyName>Random</AssemblyName>
+    <RootNamespace>FormApplication</RootNamespace>
+    <AssemblyName>Form  Application</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,6 +54,12 @@
     <Compile Include="ListRandomiser\ListRandomiserMenu.Designer.cs">
       <DependentUpon>ListRandomiserMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListRandomiser\ListRandomiser_ModifyList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListRandomiser\ListRandomiser_ModifyList.Designer.cs">
+      <DependentUpon>ListRandomiser_ModifyList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     <EmbeddedResource Include="ListRandomiser\ListRandomiserMenu.resx">
       <DependentUpon>ListRandomiserMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListRandomiser\ListRandomiser_ModifyList.resx">
+      <DependentUpon>ListRandomiser_ModifyList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main Menu.resx">
       <DependentUpon>Main Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +94,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

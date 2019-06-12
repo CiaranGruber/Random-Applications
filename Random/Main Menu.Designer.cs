@@ -1,4 +1,4 @@
-﻿namespace Random
+﻿namespace FormApplication
 {
     partial class MainMenu
     {
@@ -89,7 +89,6 @@
             this.Controls.Add(this.lbl_title);
             this.Name = "MainMenu";
             this.Text = "Main Menu";
-            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.pnl_quitPadding.ResumeLayout(false);
             this.ResumeLayout(false);
 

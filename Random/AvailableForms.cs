@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Random
+namespace FormApplication
 {
     /// <summary>
     /// Specifies the available forms
@@ -24,7 +24,12 @@ namespace Random
         /// <summary>
         /// The list randomiser application
         /// </summary>
-        ListRandomiser
+        ListRandomiser,
+
+        /// <summary>
+        /// The modify list function for the randomiser app
+        /// </summary>
+        ListRandomiser_ModifyList
     }
 
 }

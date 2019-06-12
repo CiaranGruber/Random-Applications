@@ -41,8 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseApplication.cs" />
+    <Compile Include="Exceptions.cs" />
     <Compile Include="ListRandomiserApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities\General Utilities.csproj">
+      <Project>{521573bd-aa1d-44c7-8c7d-87a300e343af}</Project>
+      <Name>General Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

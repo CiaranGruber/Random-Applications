@@ -16,16 +16,41 @@ namespace FormUtilities
         /// <summary>
         /// Reverses the control collection in the controls
         /// </summary>
-        /// <param name="originalControlCollection">The control collection to be reversed</param>
-        public static void Reverse(this ControlCollection originalControlCollection)
+        /// <param name="originalCollection">The control collection to be reversed</param>
+        public static void Reverse(this ControlCollection originalCollection)
         {
             List<Control> newControlCollection = new List<Control>();
-            foreach (Control control in originalControlCollection)
+            foreach (Control control in originalCollection)
             {
                 newControlCollection.Insert(0, control);
             }
-            originalControlCollection.Clear();
-            originalControlCollection.AddRange(newControlCollection.ToArray());
+            originalCollection.Clear();
+            originalCollection.AddRange(newControlCollection.ToArray());
+        }
+
+        /// <summary>
+        /// Replaces a specific index in a control collection
+        /// </summary>
+        /// <param name="originalCollection">The collection that is being modified</param>
+        /// <param name="newControl">The new control to replace the old control</param>
+        /// <param name="indexToReplace">The index to be replaced</param>
+        public static void Replace(this ControlCollection originalCollection, Control newControl, int indexToReplace)
+        {
+            Control newCollectionControl = new Control();
+            newCollectionControl.Controls.Clear();
+            for (int i = 0; i < originalCollection.Count; i++)
+            {
+                if (i == indexToReplace)
+                {
+                    newCollectionControl.Controls.Add(newControl);
+                }
+                else
+                {
+                    newCollectionControl.Controls.Add(originalCollection[i]);
+                }
+            }
+
+            originalCollection = newCollectionControl.Controls;
         }
     }
 }
