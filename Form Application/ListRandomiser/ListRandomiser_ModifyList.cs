@@ -166,7 +166,7 @@ namespace FormApplication.ListRandomiser
                 };
 
                 // Replace padding panel with button for previous list option
-                pnl_listOptions.Controls[optionIndex - 1].Controls.Replace(moveDown, pnl_listOptions.Controls[optionIndex - 1].Controls.Count - 1);
+                pnl_listOptions.Controls[optionIndex - 1].Controls.Replace(moveDown, 3);
 
                 overallPanel.Controls.Add(moveUp);
                 overallPanel.Controls.Add(paddingPanel);

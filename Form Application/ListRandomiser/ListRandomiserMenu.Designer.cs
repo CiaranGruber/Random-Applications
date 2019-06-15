@@ -128,7 +128,7 @@
             this.splt_mainSplit.Panel2.Controls.Add(this.pnl_saveCurrentList);
             this.splt_mainSplit.Panel2.Controls.Add(this.pnl_createList);
             this.splt_mainSplit.Size = new System.Drawing.Size(682, 253);
-            this.splt_mainSplit.SplitterDistance = 358;
+            this.splt_mainSplit.SplitterDistance = 450;
             this.splt_mainSplit.SplitterWidth = 50;
             this.splt_mainSplit.TabIndex = 0;
             // 
@@ -142,8 +142,8 @@
             // splt_display.Panel1
             // 
             this.splt_display.Panel1.Controls.Add(this.btn_roll);
-            this.splt_display.Size = new System.Drawing.Size(358, 153);
-            this.splt_display.SplitterDistance = 171;
+            this.splt_display.Size = new System.Drawing.Size(450, 153);
+            this.splt_display.SplitterDistance = 214;
             this.splt_display.SplitterWidth = 25;
             this.splt_display.TabIndex = 1;
             // 
@@ -153,7 +153,7 @@
             this.btn_roll.Font = new System.Drawing.Font("Monotxt_IV25", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_roll.Location = new System.Drawing.Point(0, 0);
             this.btn_roll.Name = "btn_roll";
-            this.btn_roll.Size = new System.Drawing.Size(171, 153);
+            this.btn_roll.Size = new System.Drawing.Size(214, 153);
             this.btn_roll.TabIndex = 1;
             this.btn_roll.Text = "Roll";
             this.btn_roll.UseVisualStyleBackColor = true;
@@ -165,7 +165,7 @@
             this.pnl_extraFunctions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_extraFunctions.Location = new System.Drawing.Point(0, 153);
             this.pnl_extraFunctions.Name = "pnl_extraFunctions";
-            this.pnl_extraFunctions.Size = new System.Drawing.Size(358, 100);
+            this.pnl_extraFunctions.Size = new System.Drawing.Size(450, 100);
             this.pnl_extraFunctions.TabIndex = 0;
             // 
             // splt_extraFunctions
@@ -184,8 +184,8 @@
             // 
             this.splt_extraFunctions.Panel2.Controls.Add(this.btn_reroll);
             this.splt_extraFunctions.Panel2.Padding = new System.Windows.Forms.Padding(0, 25, 0, 25);
-            this.splt_extraFunctions.Size = new System.Drawing.Size(358, 100);
-            this.splt_extraFunctions.SplitterDistance = 171;
+            this.splt_extraFunctions.Size = new System.Drawing.Size(450, 100);
+            this.splt_extraFunctions.SplitterDistance = 214;
             this.splt_extraFunctions.SplitterWidth = 25;
             this.splt_extraFunctions.TabIndex = 0;
             // 
@@ -195,7 +195,7 @@
             this.btn_clear.Font = new System.Drawing.Font("Monotxt_IV25", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.Location = new System.Drawing.Point(0, 25);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(171, 50);
+            this.btn_clear.Size = new System.Drawing.Size(214, 50);
             this.btn_clear.TabIndex = 0;
             this.btn_clear.Text = "Clear Results";
             this.btn_clear.UseVisualStyleBackColor = true;
@@ -207,7 +207,7 @@
             this.btn_reroll.Font = new System.Drawing.Font("Monotxt_IV25", 7.8F);
             this.btn_reroll.Location = new System.Drawing.Point(0, 25);
             this.btn_reroll.Name = "btn_reroll";
-            this.btn_reroll.Size = new System.Drawing.Size(162, 50);
+            this.btn_reroll.Size = new System.Drawing.Size(211, 50);
             this.btn_reroll.TabIndex = 1;
             this.btn_reroll.Text = "Reroll";
             this.btn_reroll.UseVisualStyleBackColor = true;
@@ -219,7 +219,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 140);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.panel1.Size = new System.Drawing.Size(274, 70);
+            this.panel1.Size = new System.Drawing.Size(182, 70);
             this.panel1.TabIndex = 3;
             // 
             // btn_generateRandomisedList
@@ -227,7 +227,7 @@
             this.btn_generateRandomisedList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_generateRandomisedList.Location = new System.Drawing.Point(0, 10);
             this.btn_generateRandomisedList.Name = "btn_generateRandomisedList";
-            this.btn_generateRandomisedList.Size = new System.Drawing.Size(274, 50);
+            this.btn_generateRandomisedList.Size = new System.Drawing.Size(182, 50);
             this.btn_generateRandomisedList.TabIndex = 0;
             this.btn_generateRandomisedList.Text = "Generate Full List";
             this.btn_generateRandomisedList.UseVisualStyleBackColor = true;
@@ -239,7 +239,7 @@
             this.pnl_saveCurrentList.Location = new System.Drawing.Point(0, 70);
             this.pnl_saveCurrentList.Name = "pnl_saveCurrentList";
             this.pnl_saveCurrentList.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.pnl_saveCurrentList.Size = new System.Drawing.Size(274, 70);
+            this.pnl_saveCurrentList.Size = new System.Drawing.Size(182, 70);
             this.pnl_saveCurrentList.TabIndex = 2;
             // 
             // btn_saveCurrentList
@@ -247,7 +247,7 @@
             this.btn_saveCurrentList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_saveCurrentList.Location = new System.Drawing.Point(0, 10);
             this.btn_saveCurrentList.Name = "btn_saveCurrentList";
-            this.btn_saveCurrentList.Size = new System.Drawing.Size(274, 50);
+            this.btn_saveCurrentList.Size = new System.Drawing.Size(182, 50);
             this.btn_saveCurrentList.TabIndex = 0;
             this.btn_saveCurrentList.Text = "Save Current List";
             this.btn_saveCurrentList.UseVisualStyleBackColor = true;
@@ -259,7 +259,7 @@
             this.pnl_createList.Location = new System.Drawing.Point(0, 0);
             this.pnl_createList.Name = "pnl_createList";
             this.pnl_createList.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.pnl_createList.Size = new System.Drawing.Size(274, 70);
+            this.pnl_createList.Size = new System.Drawing.Size(182, 70);
             this.pnl_createList.TabIndex = 0;
             // 
             // btn_modifyList
@@ -267,7 +267,7 @@
             this.btn_modifyList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_modifyList.Location = new System.Drawing.Point(0, 10);
             this.btn_modifyList.Name = "btn_modifyList";
-            this.btn_modifyList.Size = new System.Drawing.Size(274, 50);
+            this.btn_modifyList.Size = new System.Drawing.Size(182, 50);
             this.btn_modifyList.TabIndex = 0;
             this.btn_modifyList.Text = "Modify List";
             this.btn_modifyList.UseVisualStyleBackColor = true;

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace ApplicationCode.Exceptions
 {
     /// <summary>The exception that is thrown when a list does not exist</summary>
+    [Serializable]
     public class ListDoesNotExistException : Exception
     {
         /// <summary>Initialises a new instance of the <c>ListDoesNotExistException</c> class</summary>

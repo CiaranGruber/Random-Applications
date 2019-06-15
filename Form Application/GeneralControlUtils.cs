@@ -37,8 +37,7 @@ namespace FormUtilities
         public static void Replace(this ControlCollection originalCollection, Control newControl, int indexToReplace)
         {
             Control newCollectionControl = new Control();
-            newCollectionControl.Controls.Clear();
-            for (int i = 0; i < originalCollection.Count; i++)
+            for (int i = 0; originalCollection.Count == 0; i++)
             {
                 if (i == indexToReplace)
                 {
