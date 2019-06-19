@@ -28,27 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.Lbl_loading = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // Lbl_loading
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Monotxt_IV25", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 100);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Loading...";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_loading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_loading.Font = new System.Drawing.Font("Monotxt", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_loading.Location = new System.Drawing.Point(0, 0);
+            this.Lbl_loading.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Lbl_loading.Name = "Lbl_loading";
+            this.Lbl_loading.Size = new System.Drawing.Size(600, 194);
+            this.Lbl_loading.TabIndex = 0;
+            this.Lbl_loading.Text = "Loading...";
+            this.Lbl_loading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Navigation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 100);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(600, 194);
+            this.Controls.Add(this.Lbl_loading);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Navigation";
             this.Text = "Loading...";
             this.Load += new System.EventHandler(this.Navigation_Load);
@@ -58,7 +60,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Lbl_loading;
     }
 }
 

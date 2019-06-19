@@ -28,300 +28,318 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_title = new System.Windows.Forms.Label();
-            this.pnl_backPadding = new System.Windows.Forms.Panel();
-            this.btn_back = new System.Windows.Forms.Button();
-            this.pnl_main = new System.Windows.Forms.Panel();
-            this.splt_mainSplit = new System.Windows.Forms.SplitContainer();
-            this.splt_display = new System.Windows.Forms.SplitContainer();
-            this.btn_roll = new System.Windows.Forms.Button();
-            this.pnl_extraFunctions = new System.Windows.Forms.Panel();
-            this.splt_extraFunctions = new System.Windows.Forms.SplitContainer();
-            this.btn_clear = new System.Windows.Forms.Button();
-            this.btn_reroll = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_generateRandomisedList = new System.Windows.Forms.Button();
-            this.pnl_saveCurrentList = new System.Windows.Forms.Panel();
-            this.btn_saveCurrentList = new System.Windows.Forms.Button();
-            this.pnl_createList = new System.Windows.Forms.Panel();
-            this.btn_modifyList = new System.Windows.Forms.Button();
-            this.pnl_backPadding.SuspendLayout();
-            this.pnl_main.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splt_mainSplit)).BeginInit();
-            this.splt_mainSplit.Panel1.SuspendLayout();
-            this.splt_mainSplit.Panel2.SuspendLayout();
-            this.splt_mainSplit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splt_display)).BeginInit();
-            this.splt_display.Panel1.SuspendLayout();
-            this.splt_display.SuspendLayout();
-            this.pnl_extraFunctions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splt_extraFunctions)).BeginInit();
-            this.splt_extraFunctions.Panel1.SuspendLayout();
-            this.splt_extraFunctions.Panel2.SuspendLayout();
-            this.splt_extraFunctions.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.pnl_saveCurrentList.SuspendLayout();
-            this.pnl_createList.SuspendLayout();
+            this.Lbl_title = new System.Windows.Forms.Label();
+            this.Pnl_backPadding = new System.Windows.Forms.Panel();
+            this.Btn_back = new System.Windows.Forms.Button();
+            this.Pnl_main = new System.Windows.Forms.Panel();
+            this.Splt_mainSplit = new System.Windows.Forms.SplitContainer();
+            this.Splt_display = new System.Windows.Forms.SplitContainer();
+            this.Btn_roll = new System.Windows.Forms.Button();
+            this.Pnl_extraFunctions = new System.Windows.Forms.Panel();
+            this.Splt_extraFunctions = new System.Windows.Forms.SplitContainer();
+            this.Btn_clear = new System.Windows.Forms.Button();
+            this.Btn_reroll = new System.Windows.Forms.Button();
+            this.Pnl_generateFullList = new System.Windows.Forms.Panel();
+            this.Btn_generateRandomisedList = new System.Windows.Forms.Button();
+            this.Pnl_saveCurrentList = new System.Windows.Forms.Panel();
+            this.Btn_saveCurrentList = new System.Windows.Forms.Button();
+            this.Pnl_createList = new System.Windows.Forms.Panel();
+            this.Btn_modifyList = new System.Windows.Forms.Button();
+            this.Pnl_backPadding.SuspendLayout();
+            this.Pnl_main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Splt_mainSplit)).BeginInit();
+            this.Splt_mainSplit.Panel1.SuspendLayout();
+            this.Splt_mainSplit.Panel2.SuspendLayout();
+            this.Splt_mainSplit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Splt_display)).BeginInit();
+            this.Splt_display.Panel1.SuspendLayout();
+            this.Splt_display.SuspendLayout();
+            this.Pnl_extraFunctions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Splt_extraFunctions)).BeginInit();
+            this.Splt_extraFunctions.Panel1.SuspendLayout();
+            this.Splt_extraFunctions.Panel2.SuspendLayout();
+            this.Splt_extraFunctions.SuspendLayout();
+            this.Pnl_generateFullList.SuspendLayout();
+            this.Pnl_saveCurrentList.SuspendLayout();
+            this.Pnl_createList.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbl_title
+            // Lbl_title
             // 
-            this.lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbl_title.Font = new System.Drawing.Font("Monotxt_IV25", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_title.Location = new System.Drawing.Point(0, 0);
-            this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Padding = new System.Windows.Forms.Padding(25);
-            this.lbl_title.Size = new System.Drawing.Size(782, 100);
-            this.lbl_title.TabIndex = 1;
-            this.lbl_title.Text = "List Randomiser";
-            this.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_title.Location = new System.Drawing.Point(0, 0);
+            this.Lbl_title.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Lbl_title.Name = "Lbl_title";
+            this.Lbl_title.Padding = new System.Windows.Forms.Padding(50, 48, 50, 48);
+            this.Lbl_title.Size = new System.Drawing.Size(1564, 194);
+            this.Lbl_title.TabIndex = 1;
+            this.Lbl_title.Text = "List Randomiser";
+            this.Lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnl_backPadding
+            // Pnl_backPadding
             // 
-            this.pnl_backPadding.Controls.Add(this.btn_back);
-            this.pnl_backPadding.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_backPadding.Location = new System.Drawing.Point(0, 403);
-            this.pnl_backPadding.Name = "pnl_backPadding";
-            this.pnl_backPadding.Padding = new System.Windows.Forms.Padding(50, 25, 50, 25);
-            this.pnl_backPadding.Size = new System.Drawing.Size(782, 100);
-            this.pnl_backPadding.TabIndex = 2;
+            this.Pnl_backPadding.Controls.Add(this.Btn_back);
+            this.Pnl_backPadding.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Pnl_backPadding.Location = new System.Drawing.Point(0, 781);
+            this.Pnl_backPadding.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Pnl_backPadding.Name = "Pnl_backPadding";
+            this.Pnl_backPadding.Padding = new System.Windows.Forms.Padding(100, 48, 100, 48);
+            this.Pnl_backPadding.Size = new System.Drawing.Size(1564, 194);
+            this.Pnl_backPadding.TabIndex = 2;
             // 
-            // btn_back
+            // Btn_back
             // 
-            this.btn_back.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(50, 25);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(682, 50);
-            this.btn_back.TabIndex = 1;
-            this.btn_back.Text = "Back";
-            this.btn_back.UseVisualStyleBackColor = true;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            this.Btn_back.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_back.Location = new System.Drawing.Point(100, 48);
+            this.Btn_back.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Btn_back.Name = "Btn_back";
+            this.Btn_back.Size = new System.Drawing.Size(1364, 98);
+            this.Btn_back.TabIndex = 1;
+            this.Btn_back.Text = "Back";
+            this.Btn_back.UseVisualStyleBackColor = true;
+            this.Btn_back.Click += new System.EventHandler(this.Btn_back_Click);
             // 
-            // pnl_main
+            // Pnl_main
             // 
-            this.pnl_main.Controls.Add(this.splt_mainSplit);
-            this.pnl_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_main.Location = new System.Drawing.Point(0, 100);
-            this.pnl_main.Name = "pnl_main";
-            this.pnl_main.Padding = new System.Windows.Forms.Padding(50, 25, 50, 25);
-            this.pnl_main.Size = new System.Drawing.Size(782, 303);
-            this.pnl_main.TabIndex = 3;
+            this.Pnl_main.Controls.Add(this.Splt_mainSplit);
+            this.Pnl_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pnl_main.Location = new System.Drawing.Point(0, 194);
+            this.Pnl_main.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Pnl_main.Name = "Pnl_main";
+            this.Pnl_main.Padding = new System.Windows.Forms.Padding(100, 48, 100, 48);
+            this.Pnl_main.Size = new System.Drawing.Size(1564, 587);
+            this.Pnl_main.TabIndex = 3;
             // 
-            // splt_mainSplit
+            // Splt_mainSplit
             // 
-            this.splt_mainSplit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splt_mainSplit.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splt_mainSplit.IsSplitterFixed = true;
-            this.splt_mainSplit.Location = new System.Drawing.Point(50, 25);
-            this.splt_mainSplit.Name = "splt_mainSplit";
+            this.Splt_mainSplit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Splt_mainSplit.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.Splt_mainSplit.IsSplitterFixed = true;
+            this.Splt_mainSplit.Location = new System.Drawing.Point(100, 48);
+            this.Splt_mainSplit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Splt_mainSplit.Name = "Splt_mainSplit";
             // 
-            // splt_mainSplit.Panel1
+            // Splt_mainSplit.Panel1
             // 
-            this.splt_mainSplit.Panel1.Controls.Add(this.splt_display);
-            this.splt_mainSplit.Panel1.Controls.Add(this.pnl_extraFunctions);
+            this.Splt_mainSplit.Panel1.Controls.Add(this.Splt_display);
+            this.Splt_mainSplit.Panel1.Controls.Add(this.Pnl_extraFunctions);
             // 
-            // splt_mainSplit.Panel2
+            // Splt_mainSplit.Panel2
             // 
-            this.splt_mainSplit.Panel2.AutoScroll = true;
-            this.splt_mainSplit.Panel2.Controls.Add(this.panel1);
-            this.splt_mainSplit.Panel2.Controls.Add(this.pnl_saveCurrentList);
-            this.splt_mainSplit.Panel2.Controls.Add(this.pnl_createList);
-            this.splt_mainSplit.Size = new System.Drawing.Size(682, 253);
-            this.splt_mainSplit.SplitterDistance = 450;
-            this.splt_mainSplit.SplitterWidth = 50;
-            this.splt_mainSplit.TabIndex = 0;
+            this.Splt_mainSplit.Panel2.AutoScroll = true;
+            this.Splt_mainSplit.Panel2.Controls.Add(this.Pnl_generateFullList);
+            this.Splt_mainSplit.Panel2.Controls.Add(this.Pnl_saveCurrentList);
+            this.Splt_mainSplit.Panel2.Controls.Add(this.Pnl_createList);
+            this.Splt_mainSplit.Size = new System.Drawing.Size(1364, 491);
+            this.Splt_mainSplit.SplitterDistance = 1036;
+            this.Splt_mainSplit.SplitterWidth = 100;
+            this.Splt_mainSplit.TabIndex = 0;
             // 
-            // splt_display
+            // Splt_display
             // 
-            this.splt_display.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splt_display.IsSplitterFixed = true;
-            this.splt_display.Location = new System.Drawing.Point(0, 0);
-            this.splt_display.Name = "splt_display";
+            this.Splt_display.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Splt_display.IsSplitterFixed = true;
+            this.Splt_display.Location = new System.Drawing.Point(0, 0);
+            this.Splt_display.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Splt_display.Name = "Splt_display";
             // 
-            // splt_display.Panel1
+            // Splt_display.Panel1
             // 
-            this.splt_display.Panel1.Controls.Add(this.btn_roll);
-            this.splt_display.Size = new System.Drawing.Size(450, 153);
-            this.splt_display.SplitterDistance = 214;
-            this.splt_display.SplitterWidth = 25;
-            this.splt_display.TabIndex = 1;
+            this.Splt_display.Panel1.Controls.Add(this.Btn_roll);
+            this.Splt_display.Size = new System.Drawing.Size(1036, 297);
+            this.Splt_display.SplitterDistance = 492;
+            this.Splt_display.SplitterWidth = 50;
+            this.Splt_display.TabIndex = 1;
             // 
-            // btn_roll
+            // Btn_roll
             // 
-            this.btn_roll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_roll.Font = new System.Drawing.Font("Monotxt_IV25", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_roll.Location = new System.Drawing.Point(0, 0);
-            this.btn_roll.Name = "btn_roll";
-            this.btn_roll.Size = new System.Drawing.Size(214, 153);
-            this.btn_roll.TabIndex = 1;
-            this.btn_roll.Text = "Roll";
-            this.btn_roll.UseVisualStyleBackColor = true;
-            this.btn_roll.Click += new System.EventHandler(this.btn_roll_Click);
+            this.Btn_roll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_roll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_roll.Location = new System.Drawing.Point(0, 0);
+            this.Btn_roll.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Btn_roll.Name = "Btn_roll";
+            this.Btn_roll.Size = new System.Drawing.Size(492, 297);
+            this.Btn_roll.TabIndex = 1;
+            this.Btn_roll.Text = "Roll";
+            this.Btn_roll.UseVisualStyleBackColor = true;
+            this.Btn_roll.Click += new System.EventHandler(this.Btn_roll_Click);
             // 
-            // pnl_extraFunctions
+            // Pnl_extraFunctions
             // 
-            this.pnl_extraFunctions.Controls.Add(this.splt_extraFunctions);
-            this.pnl_extraFunctions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_extraFunctions.Location = new System.Drawing.Point(0, 153);
-            this.pnl_extraFunctions.Name = "pnl_extraFunctions";
-            this.pnl_extraFunctions.Size = new System.Drawing.Size(450, 100);
-            this.pnl_extraFunctions.TabIndex = 0;
+            this.Pnl_extraFunctions.Controls.Add(this.Splt_extraFunctions);
+            this.Pnl_extraFunctions.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Pnl_extraFunctions.Location = new System.Drawing.Point(0, 297);
+            this.Pnl_extraFunctions.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Pnl_extraFunctions.Name = "Pnl_extraFunctions";
+            this.Pnl_extraFunctions.Size = new System.Drawing.Size(1036, 194);
+            this.Pnl_extraFunctions.TabIndex = 0;
             // 
-            // splt_extraFunctions
+            // Splt_extraFunctions
             // 
-            this.splt_extraFunctions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splt_extraFunctions.IsSplitterFixed = true;
-            this.splt_extraFunctions.Location = new System.Drawing.Point(0, 0);
-            this.splt_extraFunctions.Name = "splt_extraFunctions";
+            this.Splt_extraFunctions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Splt_extraFunctions.IsSplitterFixed = true;
+            this.Splt_extraFunctions.Location = new System.Drawing.Point(0, 0);
+            this.Splt_extraFunctions.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Splt_extraFunctions.Name = "Splt_extraFunctions";
             // 
-            // splt_extraFunctions.Panel1
+            // Splt_extraFunctions.Panel1
             // 
-            this.splt_extraFunctions.Panel1.Controls.Add(this.btn_clear);
-            this.splt_extraFunctions.Panel1.Padding = new System.Windows.Forms.Padding(0, 25, 0, 25);
+            this.Splt_extraFunctions.Panel1.Controls.Add(this.Btn_clear);
+            this.Splt_extraFunctions.Panel1.Padding = new System.Windows.Forms.Padding(0, 48, 0, 48);
             // 
-            // splt_extraFunctions.Panel2
+            // Splt_extraFunctions.Panel2
             // 
-            this.splt_extraFunctions.Panel2.Controls.Add(this.btn_reroll);
-            this.splt_extraFunctions.Panel2.Padding = new System.Windows.Forms.Padding(0, 25, 0, 25);
-            this.splt_extraFunctions.Size = new System.Drawing.Size(450, 100);
-            this.splt_extraFunctions.SplitterDistance = 214;
-            this.splt_extraFunctions.SplitterWidth = 25;
-            this.splt_extraFunctions.TabIndex = 0;
+            this.Splt_extraFunctions.Panel2.Controls.Add(this.Btn_reroll);
+            this.Splt_extraFunctions.Panel2.Padding = new System.Windows.Forms.Padding(0, 48, 0, 48);
+            this.Splt_extraFunctions.Size = new System.Drawing.Size(1036, 194);
+            this.Splt_extraFunctions.SplitterDistance = 492;
+            this.Splt_extraFunctions.SplitterWidth = 50;
+            this.Splt_extraFunctions.TabIndex = 0;
             // 
-            // btn_clear
+            // Btn_clear
             // 
-            this.btn_clear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_clear.Font = new System.Drawing.Font("Monotxt_IV25", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear.Location = new System.Drawing.Point(0, 25);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(214, 50);
-            this.btn_clear.TabIndex = 0;
-            this.btn_clear.Text = "Clear Results";
-            this.btn_clear.UseVisualStyleBackColor = true;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            this.Btn_clear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_clear.Location = new System.Drawing.Point(0, 48);
+            this.Btn_clear.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Btn_clear.Name = "Btn_clear";
+            this.Btn_clear.Size = new System.Drawing.Size(492, 98);
+            this.Btn_clear.TabIndex = 0;
+            this.Btn_clear.Text = "Clear Results";
+            this.Btn_clear.UseVisualStyleBackColor = true;
+            this.Btn_clear.Click += new System.EventHandler(this.Btn_clear_Click);
             // 
-            // btn_reroll
+            // Btn_reroll
             // 
-            this.btn_reroll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_reroll.Font = new System.Drawing.Font("Monotxt_IV25", 7.8F);
-            this.btn_reroll.Location = new System.Drawing.Point(0, 25);
-            this.btn_reroll.Name = "btn_reroll";
-            this.btn_reroll.Size = new System.Drawing.Size(211, 50);
-            this.btn_reroll.TabIndex = 1;
-            this.btn_reroll.Text = "Reroll";
-            this.btn_reroll.UseVisualStyleBackColor = true;
+            this.Btn_reroll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_reroll.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.Btn_reroll.Location = new System.Drawing.Point(0, 48);
+            this.Btn_reroll.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Btn_reroll.Name = "Btn_reroll";
+            this.Btn_reroll.Size = new System.Drawing.Size(494, 98);
+            this.Btn_reroll.TabIndex = 1;
+            this.Btn_reroll.Text = "Reroll";
+            this.Btn_reroll.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // Pnl_generateFullList
             // 
-            this.panel1.Controls.Add(this.btn_generateRandomisedList);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 140);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.panel1.Size = new System.Drawing.Size(182, 70);
-            this.panel1.TabIndex = 3;
+            this.Pnl_generateFullList.Controls.Add(this.Btn_generateRandomisedList);
+            this.Pnl_generateFullList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Pnl_generateFullList.Location = new System.Drawing.Point(0, 272);
+            this.Pnl_generateFullList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Pnl_generateFullList.Name = "Pnl_generateFullList";
+            this.Pnl_generateFullList.Padding = new System.Windows.Forms.Padding(0, 19, 0, 19);
+            this.Pnl_generateFullList.Size = new System.Drawing.Size(228, 136);
+            this.Pnl_generateFullList.TabIndex = 3;
             // 
-            // btn_generateRandomisedList
+            // Btn_generateRandomisedList
             // 
-            this.btn_generateRandomisedList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_generateRandomisedList.Location = new System.Drawing.Point(0, 10);
-            this.btn_generateRandomisedList.Name = "btn_generateRandomisedList";
-            this.btn_generateRandomisedList.Size = new System.Drawing.Size(182, 50);
-            this.btn_generateRandomisedList.TabIndex = 0;
-            this.btn_generateRandomisedList.Text = "Generate Full List";
-            this.btn_generateRandomisedList.UseVisualStyleBackColor = true;
+            this.Btn_generateRandomisedList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_generateRandomisedList.Location = new System.Drawing.Point(0, 19);
+            this.Btn_generateRandomisedList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Btn_generateRandomisedList.Name = "Btn_generateRandomisedList";
+            this.Btn_generateRandomisedList.Size = new System.Drawing.Size(228, 98);
+            this.Btn_generateRandomisedList.TabIndex = 0;
+            this.Btn_generateRandomisedList.Text = "Generate Full List";
+            this.Btn_generateRandomisedList.UseVisualStyleBackColor = true;
             // 
-            // pnl_saveCurrentList
+            // Pnl_saveCurrentList
             // 
-            this.pnl_saveCurrentList.Controls.Add(this.btn_saveCurrentList);
-            this.pnl_saveCurrentList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_saveCurrentList.Location = new System.Drawing.Point(0, 70);
-            this.pnl_saveCurrentList.Name = "pnl_saveCurrentList";
-            this.pnl_saveCurrentList.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.pnl_saveCurrentList.Size = new System.Drawing.Size(182, 70);
-            this.pnl_saveCurrentList.TabIndex = 2;
+            this.Pnl_saveCurrentList.Controls.Add(this.Btn_saveCurrentList);
+            this.Pnl_saveCurrentList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Pnl_saveCurrentList.Location = new System.Drawing.Point(0, 136);
+            this.Pnl_saveCurrentList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Pnl_saveCurrentList.Name = "Pnl_saveCurrentList";
+            this.Pnl_saveCurrentList.Padding = new System.Windows.Forms.Padding(0, 19, 0, 19);
+            this.Pnl_saveCurrentList.Size = new System.Drawing.Size(228, 136);
+            this.Pnl_saveCurrentList.TabIndex = 2;
             // 
-            // btn_saveCurrentList
+            // Btn_saveCurrentList
             // 
-            this.btn_saveCurrentList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_saveCurrentList.Location = new System.Drawing.Point(0, 10);
-            this.btn_saveCurrentList.Name = "btn_saveCurrentList";
-            this.btn_saveCurrentList.Size = new System.Drawing.Size(182, 50);
-            this.btn_saveCurrentList.TabIndex = 0;
-            this.btn_saveCurrentList.Text = "Save Current List";
-            this.btn_saveCurrentList.UseVisualStyleBackColor = true;
+            this.Btn_saveCurrentList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_saveCurrentList.Location = new System.Drawing.Point(0, 19);
+            this.Btn_saveCurrentList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Btn_saveCurrentList.Name = "Btn_saveCurrentList";
+            this.Btn_saveCurrentList.Size = new System.Drawing.Size(228, 98);
+            this.Btn_saveCurrentList.TabIndex = 0;
+            this.Btn_saveCurrentList.Text = "Save Current List";
+            this.Btn_saveCurrentList.UseVisualStyleBackColor = true;
             // 
-            // pnl_createList
+            // Pnl_createList
             // 
-            this.pnl_createList.Controls.Add(this.btn_modifyList);
-            this.pnl_createList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_createList.Location = new System.Drawing.Point(0, 0);
-            this.pnl_createList.Name = "pnl_createList";
-            this.pnl_createList.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.pnl_createList.Size = new System.Drawing.Size(182, 70);
-            this.pnl_createList.TabIndex = 0;
+            this.Pnl_createList.Controls.Add(this.Btn_modifyList);
+            this.Pnl_createList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Pnl_createList.Location = new System.Drawing.Point(0, 0);
+            this.Pnl_createList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Pnl_createList.Name = "Pnl_createList";
+            this.Pnl_createList.Padding = new System.Windows.Forms.Padding(0, 19, 0, 19);
+            this.Pnl_createList.Size = new System.Drawing.Size(228, 136);
+            this.Pnl_createList.TabIndex = 0;
             // 
-            // btn_modifyList
+            // Btn_modifyList
             // 
-            this.btn_modifyList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_modifyList.Location = new System.Drawing.Point(0, 10);
-            this.btn_modifyList.Name = "btn_modifyList";
-            this.btn_modifyList.Size = new System.Drawing.Size(182, 50);
-            this.btn_modifyList.TabIndex = 0;
-            this.btn_modifyList.Text = "Modify List";
-            this.btn_modifyList.UseVisualStyleBackColor = true;
-            this.btn_modifyList.Click += new System.EventHandler(this.btn_createList_Click);
+            this.Btn_modifyList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_modifyList.Location = new System.Drawing.Point(0, 19);
+            this.Btn_modifyList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Btn_modifyList.Name = "Btn_modifyList";
+            this.Btn_modifyList.Size = new System.Drawing.Size(228, 98);
+            this.Btn_modifyList.TabIndex = 0;
+            this.Btn_modifyList.Text = "Modify List";
+            this.Btn_modifyList.UseVisualStyleBackColor = true;
+            this.Btn_modifyList.Click += new System.EventHandler(this.Btn_createList_Click);
             // 
             // ListRandomiserMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 503);
-            this.Controls.Add(this.pnl_main);
-            this.Controls.Add(this.pnl_backPadding);
-            this.Controls.Add(this.lbl_title);
+            this.ClientSize = new System.Drawing.Size(1564, 975);
+            this.Controls.Add(this.Pnl_main);
+            this.Controls.Add(this.Pnl_backPadding);
+            this.Controls.Add(this.Lbl_title);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "ListRandomiserMenu";
             this.Text = "List Randomiser";
-            this.pnl_backPadding.ResumeLayout(false);
-            this.pnl_main.ResumeLayout(false);
-            this.splt_mainSplit.Panel1.ResumeLayout(false);
-            this.splt_mainSplit.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splt_mainSplit)).EndInit();
-            this.splt_mainSplit.ResumeLayout(false);
-            this.splt_display.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splt_display)).EndInit();
-            this.splt_display.ResumeLayout(false);
-            this.pnl_extraFunctions.ResumeLayout(false);
-            this.splt_extraFunctions.Panel1.ResumeLayout(false);
-            this.splt_extraFunctions.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splt_extraFunctions)).EndInit();
-            this.splt_extraFunctions.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.pnl_saveCurrentList.ResumeLayout(false);
-            this.pnl_createList.ResumeLayout(false);
+            this.Pnl_backPadding.ResumeLayout(false);
+            this.Pnl_main.ResumeLayout(false);
+            this.Splt_mainSplit.Panel1.ResumeLayout(false);
+            this.Splt_mainSplit.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Splt_mainSplit)).EndInit();
+            this.Splt_mainSplit.ResumeLayout(false);
+            this.Splt_display.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Splt_display)).EndInit();
+            this.Splt_display.ResumeLayout(false);
+            this.Pnl_extraFunctions.ResumeLayout(false);
+            this.Splt_extraFunctions.Panel1.ResumeLayout(false);
+            this.Splt_extraFunctions.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Splt_extraFunctions)).EndInit();
+            this.Splt_extraFunctions.ResumeLayout(false);
+            this.Pnl_generateFullList.ResumeLayout(false);
+            this.Pnl_saveCurrentList.ResumeLayout(false);
+            this.Pnl_createList.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_title;
-        private System.Windows.Forms.Panel pnl_backPadding;
-        private System.Windows.Forms.Button btn_back;
-        private System.Windows.Forms.Panel pnl_main;
-        private System.Windows.Forms.SplitContainer splt_mainSplit;
-        private System.Windows.Forms.SplitContainer splt_display;
-        private System.Windows.Forms.Button btn_roll;
-        private System.Windows.Forms.Panel pnl_extraFunctions;
-        private System.Windows.Forms.SplitContainer splt_extraFunctions;
-        private System.Windows.Forms.Button btn_clear;
-        private System.Windows.Forms.Button btn_reroll;
-        private System.Windows.Forms.Panel pnl_createList;
-        private System.Windows.Forms.Button btn_modifyList;
-        private System.Windows.Forms.Panel pnl_saveCurrentList;
-        private System.Windows.Forms.Button btn_saveCurrentList;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_generateRandomisedList;
+        private System.Windows.Forms.Label Lbl_title;
+        private System.Windows.Forms.Panel Pnl_backPadding;
+        private System.Windows.Forms.Button Btn_back;
+        private System.Windows.Forms.Panel Pnl_main;
+        private System.Windows.Forms.SplitContainer Splt_mainSplit;
+        private System.Windows.Forms.SplitContainer Splt_display;
+        private System.Windows.Forms.Button Btn_roll;
+        private System.Windows.Forms.Panel Pnl_extraFunctions;
+        private System.Windows.Forms.SplitContainer Splt_extraFunctions;
+        private System.Windows.Forms.Button Btn_clear;
+        private System.Windows.Forms.Button Btn_reroll;
+        private System.Windows.Forms.Panel Pnl_createList;
+        private System.Windows.Forms.Button Btn_modifyList;
+        private System.Windows.Forms.Panel Pnl_saveCurrentList;
+        private System.Windows.Forms.Button Btn_saveCurrentList;
+        private System.Windows.Forms.Panel Pnl_generateFullList;
+        private System.Windows.Forms.Button Btn_generateRandomisedList;
     }
 }

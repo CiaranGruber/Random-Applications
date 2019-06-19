@@ -124,11 +124,11 @@ namespace FormApplication
                 overallPanel.Controls.Add(generatorsPanel);
                 overallPanel.Controls.Reverse();
 
-                pnl_availableGenerators.Controls.Add(overallPanel);
+                Pnl_availableGenerators.Controls.Add(overallPanel);
             }
 
             // Correct panel order
-            pnl_availableGenerators.Controls.Reverse();
+            Pnl_availableGenerators.Controls.Reverse();
         }
 
         private void GeneratorButton_Click(object sender, EventArgs e)
@@ -150,7 +150,7 @@ namespace FormApplication
             Close();
         }
 
-        private void btn_quit_Click(object sender, EventArgs e)
+        private void Btn_quit_Click(object sender, EventArgs e)
         {
             Close();
         }

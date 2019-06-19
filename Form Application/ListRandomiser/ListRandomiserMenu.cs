@@ -22,28 +22,28 @@ namespace FormApplication.ListRandomiser
             CenterToScreen();
 
             // Change size of splitters
-            splt_display.SplitterWidth = 25;
-            splt_extraFunctions.SplitterWidth = 25;
-            splt_mainSplit.SplitterWidth = 50;
+            Splt_display.SplitterWidth = 25;
+            Splt_extraFunctions.SplitterWidth = 25;
+            Splt_mainSplit.SplitterWidth = 50;
 
             // Change splitter distance to relevant relative distances
-            splt_display.SplitterDistance = (splt_display.Width - splt_display.SplitterWidth) / 2;
-            splt_extraFunctions.SplitterDistance = (splt_extraFunctions.Width - splt_extraFunctions.SplitterWidth) / 2;
-            splt_mainSplit.SplitterDistance = splt_mainSplit.Width - splt_mainSplit.SplitterWidth - 150;
+            Splt_display.SplitterDistance = (Splt_display.Width - Splt_display.SplitterWidth) / 2;
+            Splt_extraFunctions.SplitterDistance = (Splt_extraFunctions.Width - Splt_extraFunctions.SplitterWidth) / 2;
+            Splt_mainSplit.SplitterDistance = Splt_mainSplit.Width - Splt_mainSplit.SplitterWidth - 150;
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
+        private void Btn_back_Click(object sender, EventArgs e)
         {
             Navigation.SaveNextForm(Forms.MainMenu);
             Close();
         }
 
-        private void btn_clear_Click(object sender, EventArgs e)
+        private void Btn_clear_Click(object sender, EventArgs e)
         {
-            splt_display.Panel2.Controls.Clear();
+            Splt_display.Panel2.Controls.Clear();
         }
 
-        private void btn_roll_Click(object sender, EventArgs e)
+        private void Btn_roll_Click(object sender, EventArgs e)
         {
             if (Application.ListsAvailable.Count == 0)
             {
@@ -51,7 +51,7 @@ namespace FormApplication.ListRandomiser
             }
         }
 
-        private void btn_createList_Click(object sender, EventArgs e)
+        private void Btn_createList_Click(object sender, EventArgs e)
         {
             Navigation.SaveNextForm(Forms.ListRandomiser_ModifyList, new List<object>() { Application });
             Close();

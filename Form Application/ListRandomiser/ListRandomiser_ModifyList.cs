@@ -23,21 +23,21 @@ namespace FormApplication.ListRandomiser
             InitializeComponent();
             CenterToScreen();
 
-            txt_currentList.Top = (pnl_currentList.Height - txt_currentList.Height) / 2;
+            Txt_currentList.Top = (Pnl_currentList.Height - Txt_currentList.Height) / 2;
 
-            splt_mainFunctions.SplitterWidth = 25;
-            splt_mainFunctions.SplitterDistance = (splt_mainFunctions.Width - splt_mainFunctions.SplitterWidth) / 2;
+            Splt_mainFunctions.SplitterWidth = 25;
+            Splt_mainFunctions.SplitterDistance = (Splt_mainFunctions.Width - Splt_mainFunctions.SplitterWidth) / 2;
 
             LoadList(Application.CurrentList);
         }
 
         private void LoadList(SpecificList currentList)
         {
-            pnl_listOptions.Controls.Clear();
+            Pnl_listOptions.Controls.Clear();
 
             if (currentList != null)
             {
-                txt_currentList.Lines = new string[] { currentList.Name };
+                Txt_currentList.Lines = new string[] { currentList.Name };
 
                 for (int i = 0; i < currentList.Items.Count; i++)
                 {
@@ -104,16 +104,16 @@ namespace FormApplication.ListRandomiser
                         overallPanel.Controls.Add(paddingPanel);
                     }
 
-                    pnl_listOptions.Controls.Add(overallPanel);
+                    Pnl_listOptions.Controls.Add(overallPanel);
                 }
 
-                pnl_listOptions.Controls.Reverse();
+                Pnl_listOptions.Controls.Reverse();
             }
         }
 
         private void AddOption(string optionName, int optionIndex)
         {
-            pnl_listOptions.Controls.Reverse();
+            Pnl_listOptions.Controls.Reverse();
 
             Panel overallPanel = new Panel
             {
@@ -166,7 +166,7 @@ namespace FormApplication.ListRandomiser
                 };
 
                 // Replace padding panel with button for previous list option
-                pnl_listOptions.Controls[optionIndex - 1].Controls.Replace(moveDown, 3);
+                Pnl_listOptions.Controls[optionIndex - 1].Controls.Replace(moveDown, 3);
 
                 overallPanel.Controls.Add(moveUp);
                 overallPanel.Controls.Add(paddingPanel);
@@ -184,9 +184,9 @@ namespace FormApplication.ListRandomiser
                 }
             }
 
-            pnl_listOptions.Controls.Add(overallPanel);
+            Pnl_listOptions.Controls.Add(overallPanel);
 
-            pnl_listOptions.Controls.Reverse();
+            Pnl_listOptions.Controls.Reverse();
         }
 
         private void RemoveOption_Click(object sender, EventArgs e)
@@ -196,41 +196,41 @@ namespace FormApplication.ListRandomiser
             Application.RemoveItem(index);
 
             // As controls are flipped, index must be removed at the inverse number
-            pnl_listOptions.Controls.RemoveAt(pnl_listOptions.Controls.Count - index - 1);
+            Pnl_listOptions.Controls.RemoveAt(Pnl_listOptions.Controls.Count - index - 1);
             
             for (int i = index - 1; i >= 0; i--)
             {
                 // Change name for the buttons
                 for (int j = 0; j < 3; j++)
                 {
-                    pnl_listOptions.Controls[i].Controls[j].Name = (pnl_listOptions.Controls.Count - i - 1).ToString();
+                    Pnl_listOptions.Controls[i].Controls[j].Name = (Pnl_listOptions.Controls.Count - i - 1).ToString();
                 }
             }
         }
 
-        private void btn_addItem_Click(object sender, EventArgs e)
+        private void Btn_addItem_Click(object sender, EventArgs e)
         {
-            Application.AddItem(txt_newItem.Lines[0]);
+            Application.AddItem(Txt_newItem.Lines[0]);
 
             AddOption(Application.CurrentList.Items.Last(), Application.CurrentList.Items.Count - 1);
 
-            txt_newItem.Lines = new string[] { };
+            Txt_newItem.Lines = new string[] { };
         }
 
-        private void txt_currentList_TextChanged(object sender, EventArgs e)
+        private void Txt_currentList_TextChanged(object sender, EventArgs e)
         {
-            Application.ChangeName(txt_currentList.Lines[0]);
+            Application.ChangeName(Txt_currentList.Lines[0]);
         }
 
-        private void btn_done_Click(object sender, EventArgs e)
+        private void Btn_done_Click(object sender, EventArgs e)
         {
             Navigation.SaveNextForm(Forms.ListRandomiser, new List<object> { Application });
             Close();
         }
 
-        private void txt_newItem_TextChanged(object sender, EventArgs e)
+        private void Txt_newItem_TextChanged(object sender, EventArgs e)
         {
-            btn_addItem.Enabled = txt_newItem.Lines.Length > 0;
+            Btn_addItem.Enabled = Txt_newItem.Lines.Length > 0;
         }
     }
 }
