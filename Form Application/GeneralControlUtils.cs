@@ -37,7 +37,7 @@ namespace FormUtilities
         public static void Replace(this ControlCollection originalCollection, Control newControl, int indexToReplace)
         {
             Control newCollectionControl = new Control();
-            for (int i = 0; originalCollection.Count == 0; i++)
+            for (int i = 0; originalCollection.Count > 1 || i == indexToReplace; i++)
             {
                 if (i == indexToReplace)
                 {
@@ -45,11 +45,37 @@ namespace FormUtilities
                 }
                 else
                 {
-                    newCollectionControl.Controls.Add(originalCollection[i]);
+                    newCollectionControl.Controls.Add(originalCollection[0]);
                 }
             }
 
-            originalCollection = newCollectionControl.Controls;
+            originalCollection.Clear();
+            originalCollection.AddRange(newCollectionControl.Controls.ToArray());
+        }
+
+        /// <summary>
+        /// Copies the elements of the <c>ControlCollection</c> to a new array
+        /// </summary>
+        /// <param name="controlCollection">The control collection to copy from</param>
+        /// <returns>A list containing all controls</returns>
+        public static Control[] ToArray(this ControlCollection controlCollection)
+        {
+            return controlCollection.ToList().ToArray();
+        }
+
+        /// <summary>
+        /// Copies the elements of the <c>ControlCollection</c> to a new list
+        /// </summary>
+        /// <param name="controlCollection">The control collection to copy from</param>
+        /// <returns>A list containing all controls</returns>
+        public static List<Control> ToList(this ControlCollection controlCollection)
+        {
+            List<Control> controlList = new List<Control>();
+            foreach (Control control in controlCollection)
+            {
+                controlList.Add(control);
+            }
+            return controlList;
         }
     }
 }
