@@ -29,7 +29,17 @@ namespace FormApplication
         /// <summary>
         /// The modify list function for the randomiser app
         /// </summary>
-        ListRandomiser_ModifyList
+        ListRandomiser_ModifyList,
+
+        /// <summary>
+        /// The settings function for the randomiser app
+        /// </summary>
+        ListRandomiser_Settings,
+
+        /// <summary>
+        /// The form where a temporary list may be added
+        /// </summary>
+        ListRandomiser_AddTempList
     }
 
 }

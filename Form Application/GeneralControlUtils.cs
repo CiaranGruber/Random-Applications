@@ -32,25 +32,85 @@ namespace FormUtilities
         /// Replaces a specific index in a control collection
         /// </summary>
         /// <param name="originalCollection">The collection that is being modified</param>
-        /// <param name="newControl">The new control to replace the old control</param>
         /// <param name="indexToReplace">The index to be replaced</param>
-        public static void Replace(this ControlCollection originalCollection, Control newControl, int indexToReplace)
+        /// <param name="newControl">The new control to replace the old control</param>
+        public static void Replace(this ControlCollection originalCollection, int indexToReplace, Control newControl)
         {
-            Control newCollectionControl = new Control();
-            for (int i = 0; originalCollection.Count > 1 || i == indexToReplace; i++)
+            originalCollection.Insert(indexToReplace, newControl);
+            originalCollection.RemoveAt(indexToReplace + 1);
+        }
+
+        /// <summary>
+        /// Inserts a control into the <c>ControlCollection</c> at the specified index
+        /// </summary>
+        /// <param name="originalCollection">The collection that is being modified</param>
+        /// <param name="index">The zero-based index at which item is being inserted</param>
+        /// <param name="newControl">The control to insert</param>
+        public static void Insert(this ControlCollection originalCollection, int index, Control newControl)
+        {
+            // Detect if index is out of range
+            if (index < 0 || index > originalCollection.Count)
             {
-                if (i == indexToReplace)
-                {
-                    newCollectionControl.Controls.Add(newControl);
-                }
-                else
-                {
-                    newCollectionControl.Controls.Add(originalCollection[0]);
-                }
+                throw new IndexOutOfRangeException("Index must be within the bounds of the ControlCollection");
             }
 
-            originalCollection.Clear();
-            originalCollection.AddRange(newCollectionControl.Controls.ToArray());
+            // Decide best method depending on index or count
+            if (originalCollection.Count == 0)
+            {
+                originalCollection.Add(newControl);
+            }
+            else if (index > originalCollection.Count / 2)
+            {
+                SmartInsert(originalCollection, index, newControl);
+            }
+            else
+            {
+                BasicInsert(originalCollection, index, newControl);
+            }
+        }
+
+        private static void BasicInsert(this ControlCollection originalCollection, int index, Control newControl)
+        {
+            int i = 0;
+            Control tempControl = new Control();
+            
+            // Loop through original collection until point at which index is to be added
+            while (originalCollection.Count > 0)
+            {
+                // Inserts the new control if currently at the desired index
+                if (i == index)
+                {
+                    tempControl.Controls.Add(newControl);
+                }
+                tempControl.Controls.Add(originalCollection[0]);
+                originalCollection.RemoveAt(0);
+                i++;
+            }
+
+            // Finally add modified collection
+            originalCollection.AddRange(tempControl.Controls.ToArray());
+        }
+
+        private static void SmartInsert(this ControlCollection originalCollection, int index, Control newControl)
+        {
+            Control tempControl = new Control();
+
+            // Save collection contents until next index is the new control
+            while (originalCollection.Count > index)
+            {
+                tempControl.Controls.Add(originalCollection[originalCollection.Count - 1]);
+                originalCollection.RemoveAt(originalCollection.Count - 1);
+            }
+
+            // Add control
+            originalCollection.Add(newControl);
+
+            // Add old list contents
+            while (tempControl.Controls.Count > 0)
+            {
+                originalCollection.Add(tempControl.Controls[tempControl.Controls.Count - 1]);
+                tempControl.Controls.RemoveAt(tempControl.Controls.Count - 1);
+            }
         }
 
         /// <summary>

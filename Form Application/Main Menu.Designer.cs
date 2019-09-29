@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.Lbl_title = new System.Windows.Forms.Label();
             this.Pnl_quitPadding = new System.Windows.Forms.Panel();
             this.Btn_quit = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@
             this.Lbl_title.Font = new System.Drawing.Font("Monotxt", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_title.Location = new System.Drawing.Point(0, 0);
             this.Lbl_title.Name = "Lbl_title";
-            this.Lbl_title.Padding = new System.Windows.Forms.Padding(25, 25, 25, 25);
+            this.Lbl_title.Padding = new System.Windows.Forms.Padding(25);
             this.Lbl_title.Size = new System.Drawing.Size(532, 100);
             this.Lbl_title.TabIndex = 0;
             this.Lbl_title.Text = "Random Generators";
@@ -53,7 +54,7 @@
             this.Pnl_quitPadding.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Pnl_quitPadding.Location = new System.Drawing.Point(0, 453);
             this.Pnl_quitPadding.Name = "Pnl_quitPadding";
-            this.Pnl_quitPadding.Padding = new System.Windows.Forms.Padding(25, 25, 25, 25);
+            this.Pnl_quitPadding.Padding = new System.Windows.Forms.Padding(25);
             this.Pnl_quitPadding.Size = new System.Drawing.Size(532, 100);
             this.Pnl_quitPadding.TabIndex = 2;
             // 
@@ -75,7 +76,7 @@
             this.Pnl_availableGenerators.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_availableGenerators.Location = new System.Drawing.Point(0, 100);
             this.Pnl_availableGenerators.Name = "Pnl_availableGenerators";
-            this.Pnl_availableGenerators.Padding = new System.Windows.Forms.Padding(25, 25, 25, 25);
+            this.Pnl_availableGenerators.Padding = new System.Windows.Forms.Padding(25);
             this.Pnl_availableGenerators.Size = new System.Drawing.Size(532, 353);
             this.Pnl_availableGenerators.TabIndex = 3;
             // 
@@ -87,7 +88,9 @@
             this.Controls.Add(this.Pnl_availableGenerators);
             this.Controls.Add(this.Pnl_quitPadding);
             this.Controls.Add(this.Lbl_title);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Main Menu";
             this.Pnl_quitPadding.ResumeLayout(false);
             this.ResumeLayout(false);

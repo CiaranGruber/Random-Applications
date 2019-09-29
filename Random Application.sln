@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "General Utilities", "Utilit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form Application", "Form Application\Form Application.csproj", "{72AB7C70-1243-4755-BBEB-37BFF4721168}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit Tests", "Unit Tests\Unit Tests.csproj", "{F2A9D131-FBD4-468D-92D2-8EC1540B0DDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms-based Unit Tests", "Forms-based Unit Tests\Forms-based Unit Tests.csproj", "{11CD3020-D2C7-41A8-BC89-8C469DF1F699}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{72AB7C70-1243-4755-BBEB-37BFF4721168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72AB7C70-1243-4755-BBEB-37BFF4721168}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72AB7C70-1243-4755-BBEB-37BFF4721168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2A9D131-FBD4-468D-92D2-8EC1540B0DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2A9D131-FBD4-468D-92D2-8EC1540B0DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2A9D131-FBD4-468D-92D2-8EC1540B0DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2A9D131-FBD4-468D-92D2-8EC1540B0DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11CD3020-D2C7-41A8-BC89-8C469DF1F699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CD3020-D2C7-41A8-BC89-8C469DF1F699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11CD3020-D2C7-41A8-BC89-8C469DF1F699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11CD3020-D2C7-41A8-BC89-8C469DF1F699}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

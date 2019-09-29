@@ -25,83 +25,54 @@ namespace FormApplication.ListRandomiser
 
             Txt_currentList.Top = (Pnl_currentList.Height - Txt_currentList.Height) / 2;
 
+            // Set splitter widths/distances
             Splt_mainFunctions.SplitterWidth = 25;
+            Splt_secondMainFunctions.SplitterWidth = 25;
             Splt_mainFunctions.SplitterDistance = (Splt_mainFunctions.Width - Splt_mainFunctions.SplitterWidth) / 2;
+            Splt_secondMainFunctions.SplitterDistance = (Splt_secondMainFunctions.Width - Splt_secondMainFunctions.SplitterWidth) / 2;
 
-            LoadList(Application.CurrentList);
+            // Load the lists and fill the combo boxes
+            LoadCurrentList();
+            CBo_loadList.Items.AddRange(Application.ListsAvailable.ToArray());
+            CBo_removeList.Items.AddRange(Application.ListsAvailable.ToArray());
         }
 
-        private void LoadList(SpecificList currentList)
+        private void LoadCurrentList()
         {
             Pnl_listOptions.Controls.Clear();
 
-            if (currentList != null)
+            if (Application.CurrentList != null)
             {
-                Txt_currentList.Lines = new string[] { currentList.Name };
+                Txt_currentList.Lines = new string[] { Application.CurrentList.Name };
 
-                for (int i = 0; i < currentList.Items.Count; i++)
+                for (int i = 0; i < Application.CurrentList.Items.Count; i++)
                 {
-                    Panel overallPanel = new Panel
-                    {
-                        Dock = DockStyle.Top,
-                        Height = 25
-                    };
+                    // Get the base panel with the name and remove button
+                    Panel overallPanel = ListRandomiserUtils.GetBasePanel(Application.CurrentList.Items[i], i);
 
-                    Label optionName = new Label
-                    {
-                        Dock = DockStyle.Fill,
-                        Text = currentList.Items[i],
-                        TextAlign = ContentAlignment.MiddleLeft
-                    };
-
-                    Button removeOption = new Button
-                    {
-                        Text = "Remove",
-                        Width = 70,
-                        Dock = DockStyle.Right,
-                        Name = i.ToString()
-                    };
-
-                    Button moveUp = new Button
-                    {
-                        Text = "↑",
-                        Width = 35,
-                        Dock = DockStyle.Right,
-                        Name = i.ToString()
-                    };
-
-                    Button moveDown = new Button
-                    {
-                        Text = "↓",
-                        Width = 35,
-                        Dock = DockStyle.Right,
-                        Name = i.ToString()
-                    };
-
-                    Panel paddingPanel = new Panel
-                    {
-                        Width = 35,
-                        Dock = DockStyle.Right
-                    };
-
-                    overallPanel.Controls.Add(optionName);
-                    overallPanel.Controls.Add(removeOption);
-
+                    // Add Remove button Click event
+                    overallPanel.Controls[1].Click += RemoveOption_Click;
+                    
+                    // Add Move Up button and Click event if not at the top of the list
                     if (i != 0)
                     {
-                        overallPanel.Controls.Add(moveUp);
+                        overallPanel.AddMoveUpButton(i);
+                        overallPanel.Controls[2].Click += MoveUp_Click;
                     }
                     else
                     {
-                        overallPanel.Controls.Add(paddingPanel);
+                        overallPanel.AddPaddingPanel();
                     }
-                    if (i != currentList.Items.Count - 1)
+
+                    // Add Move Down button and Click event if not at the bottom of the list
+                    if (i != Application.CurrentList.Items.Count - 1)
                     {
-                        overallPanel.Controls.Add(moveDown);
+                        overallPanel.AddMoveDownButton(i);
+                        overallPanel.Controls[3].Click += MoveDown_Click;
                     }
                     else
                     {
-                        overallPanel.Controls.Add(paddingPanel);
+                        overallPanel.AddPaddingPanel();
                     }
 
                     Pnl_listOptions.Controls.Add(overallPanel);
@@ -113,80 +84,37 @@ namespace FormApplication.ListRandomiser
 
         private void AddOption(string optionName, int optionIndex)
         {
-            Pnl_listOptions.Controls.Reverse();
+            // Get the base panel with the name and remove button
+            Panel overallPanel = ListRandomiserUtils.GetBasePanel(optionName, optionIndex);
 
-            Panel overallPanel = new Panel
-            {
-                Dock = DockStyle.Top,
-                Height = 25
-            };
+            // Add Remove button Click event
+            overallPanel.Controls[1].Click += RemoveOption_Click;
 
-            Label optionLabel = new Label
-            {
-                Dock = DockStyle.Fill,
-                Text = optionName,
-                TextAlign = ContentAlignment.MiddleLeft
-            };
-
-            Button removeOption = new Button
-            {
-                Text = "Remove",
-                Width = 70,
-                Dock = DockStyle.Right,
-                Name = optionIndex.ToString()
-            };
-            removeOption.Click += RemoveOption_Click;
-
-            overallPanel.Controls.Add(optionLabel);
-            overallPanel.Controls.Add(removeOption);
             
-            // Adds the MoveDown and MoveUp button to the previous control and current control if relevant
+            // Adds the MoveDown and MoveUp button to the previous control and current control if not the first
             if (optionIndex != 0)
             {
-                Button moveUp = new Button
-                {
-                    Text = "↑",
-                    Width = 35,
-                    Dock = DockStyle.Right,
-                    Name = optionIndex.ToString()
-                };
+                // Add down button to previous panel - Note bottom panel is index 0
+                Pnl_listOptions.Controls[0].PaddingToDownButton(optionIndex - 1);
 
-                Button moveDown = new Button
-                {
-                    Text = "↓",
-                    Width = 35,
-                    Dock = DockStyle.Right,
-                    Name = (optionIndex - 1).ToString()
-                };
+                // Add up button to current panel
+                overallPanel.AddMoveUpButton(optionIndex);
+                overallPanel.AddPaddingPanel();
 
-                Panel paddingPanel = new Panel
-                {
-                    Width = 35,
-                    Dock = DockStyle.Right
-                };
-
-                // Replace padding panel with button for previous list option
-                Pnl_listOptions.Controls[optionIndex - 1].Controls.Replace(moveDown, 3);
-
-                overallPanel.Controls.Add(moveUp);
-                overallPanel.Controls.Add(paddingPanel);
+                // Add Click events
+                overallPanel.Controls[2].Click += MoveUp_Click;
+                Pnl_listOptions.Controls[0].Controls[3].Click += MoveDown_Click;
             }
             else
             {
-                for (int x = 0; x < 2; x++)
-                {
-                    Panel paddingPanel = new Panel
-                    {
-                        Width = 35,
-                        Dock = DockStyle.Right
-                    };
-                    overallPanel.Controls.Add(paddingPanel);
-                }
+                // Add padding rather than buttons
+                overallPanel.AddPaddingPanel();
+                overallPanel.AddPaddingPanel();
             }
+            
+            Pnl_listOptions.Controls.Insert(0, overallPanel);
 
-            Pnl_listOptions.Controls.Add(overallPanel);
-
-            Pnl_listOptions.Controls.Reverse();
+            UpdateButtons();
         }
 
         private void RemoveOption_Click(object sender, EventArgs e)
@@ -195,17 +123,61 @@ namespace FormApplication.ListRandomiser
 
             Application.RemoveItem(index);
 
-            // As controls are flipped, index must be removed at the inverse number
-            Pnl_listOptions.Controls.RemoveAt(Pnl_listOptions.Controls.Count - index - 1);
-            
-            for (int i = index - 1; i >= 0; i--)
+            // For all changes, note that controls are in reverse order. Ie. Index 0 is at the bottom
+
+            // Remove down arrow of previous index if last option
+            if (Pnl_listOptions.Controls.Count > 1 && index == Pnl_listOptions.Controls.Count - 1)
+            {
+                Pnl_listOptions.Controls[1].DownButtonToPadding();
+            }
+
+            // Remove up arrow of index after if first option
+            if (Pnl_listOptions.Controls.Count > 1 && index == 0)
+            {
+                Pnl_listOptions.Controls[Pnl_listOptions.Controls.Count - 2].UpButtonToPadding();
+            }
+
+            // Remove option
+            Pnl_listOptions.Controls.RemoveAt(Pnl_listOptions.Controls.Count - 1 - index);
+
+            for (int i = Pnl_listOptions.Controls.Count - 1 - index; i >= 0; --i)
             {
                 // Change name for the buttons
-                for (int j = 0; j < 3; j++)
+                for (int j = 1; j < 4; j++)
                 {
-                    Pnl_listOptions.Controls[i].Controls[j].Name = (Pnl_listOptions.Controls.Count - i - 1).ToString();
+                    Pnl_listOptions.Controls[i].Controls[j].Name = (Pnl_listOptions.Controls.Count - 1 - i).ToString();
                 }
             }
+
+            UpdateButtons();
+        }
+
+        private void MoveUp_Click(object sender, EventArgs e)
+        {
+            int index = Convert.ToInt16((sender as Control).Name);
+
+            Application.MoveUp(index);
+
+            // Swap names - Note: list options are in reverse order
+            string originalText = Pnl_listOptions.Controls[Pnl_listOptions.Controls.Count - index - 1].Controls[0].Text;
+            string newText = Pnl_listOptions.Controls[Pnl_listOptions.Controls.Count - index].Controls[0].Text;
+
+            Pnl_listOptions.Controls[Pnl_listOptions.Controls.Count - index].Controls[0].Text = originalText;
+            Pnl_listOptions.Controls[Pnl_listOptions.Controls.Count - index - 1].Controls[0].Text = newText;
+        }
+
+        private void MoveDown_Click(object sender, EventArgs e)
+        {
+            int index = Convert.ToInt16((sender as Control).Name);
+
+            Application.MoveDown(index);
+
+            // Swap names - Note: list options are in reverse order
+            string originalText = Pnl_listOptions.Controls[Pnl_listOptions.Controls.Count - index - 1].Controls[0].Text;
+            string newText = Pnl_listOptions.Controls[Pnl_listOptions.Controls.Count - index - 2].Controls[0].Text;
+
+            Pnl_listOptions.Controls[Pnl_listOptions.Controls.Count - index - 2].Controls[0].Text = originalText;
+            Pnl_listOptions.Controls[Pnl_listOptions.Controls.Count - index - 1].Controls[0].Text = newText;
         }
 
         private void Btn_addItem_Click(object sender, EventArgs e)
@@ -215,11 +187,19 @@ namespace FormApplication.ListRandomiser
             AddOption(Application.CurrentList.Items.Last(), Application.CurrentList.Items.Count - 1);
 
             Txt_newItem.Lines = new string[] { };
+            UpdateButtons();
         }
 
         private void Txt_currentList_TextChanged(object sender, EventArgs e)
         {
-            Application.ChangeName(Txt_currentList.Lines[0]);
+            if (Txt_currentList.Lines.Length > 0)
+            {
+                Application.ChangeName(Txt_currentList.Lines[0]);
+            }
+            else
+            {
+                Application.ChangeName(null);
+            }
         }
 
         private void Btn_done_Click(object sender, EventArgs e)
@@ -230,6 +210,62 @@ namespace FormApplication.ListRandomiser
 
         private void Txt_newItem_TextChanged(object sender, EventArgs e)
         {
+            UpdateButtons();
+        }
+
+        private void Btn_removeList_Click(object sender, EventArgs e)
+        {
+            // Cancel function if user wishes not to remove the list
+            if (MessageBox.Show("Are you sure you wish to continue? Once deleted, you cannot retrieve a list", "", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+            {
+                return;
+            }
+            Application.RemoveList(CBo_removeList.SelectedItem.ToString());
+            CBo_loadList.Items.Remove(CBo_removeList.SelectedItem);
+            CBo_removeList.Items.Remove(CBo_removeList.SelectedItem);
+
+            UpdateButtons();
+        }
+
+        private void Btn_saveList_Click(object sender, EventArgs e)
+        {
+            if (Application.ListsAvailable.Contains(Txt_currentList.Text))
+            {
+                MessageBox.Show("List name is already taken - please choose a new one");
+                return;
+            }
+            Application.SaveList();
+
+            CBo_loadList.Items.Add(Application.CurrentList.Name);
+            CBo_removeList.Items.Add(Application.CurrentList.Name);
+
+            MessageBox.Show("List successfully saved");
+        }
+
+        private void CBo_loadList_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            UpdateButtons();
+        }
+
+        private void CBo_removeList_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            UpdateButtons();
+        }
+
+        private void Btn_loadList_Click(object sender, EventArgs e)
+        {
+            Application.ChooseList(CBo_loadList.SelectedItem.ToString());
+            
+            CBo_loadList.SelectedItem = null;
+            LoadCurrentList();
+            UpdateButtons();
+        }
+
+        private void UpdateButtons()
+        {
+            Btn_loadList.Enabled = CBo_loadList.SelectedItem != null;
+            Btn_removeList.Enabled = CBo_removeList.SelectedItem != null;
+            Btn_saveList.Enabled = Pnl_listOptions.Controls.Count > 0;
             Btn_addItem.Enabled = Txt_newItem.Lines.Length > 0;
         }
     }

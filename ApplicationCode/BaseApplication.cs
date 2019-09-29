@@ -20,7 +20,7 @@ namespace ApplicationCode
         /// <summary>
         /// The starting save folder name for the save info
         /// </summary>
-        public static readonly string SaveFolder = "./Save Data";
+        public static readonly string SaveFolder = Path.Combine(".", "Save Data");
 
         /// <summary>
         /// Loads the base application by creating relevant folders

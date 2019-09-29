@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,11 +57,24 @@
     <Compile Include="ListRandomiser\ListRandomiserMenu.Designer.cs">
       <DependentUpon>ListRandomiserMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListRandomiser\ListRandomiserUtils.cs" />
+    <Compile Include="ListRandomiser\ListRandomiser_AddTempList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListRandomiser\ListRandomiser_AddTempList.Designer.cs">
+      <DependentUpon>ListRandomiser_AddTempList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListRandomiser\ListRandomiser_ModifyList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListRandomiser\ListRandomiser_ModifyList.Designer.cs">
       <DependentUpon>ListRandomiser_ModifyList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListRandomiser\ListRandomiser_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListRandomiser\ListRandomiser_Settings.Designer.cs">
+      <DependentUpon>ListRandomiser_Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Menu.cs">
       <SubType>Form</SubType>
@@ -77,8 +93,14 @@
     <EmbeddedResource Include="ListRandomiser\ListRandomiserMenu.resx">
       <DependentUpon>ListRandomiserMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListRandomiser\ListRandomiser_AddTempList.resx">
+      <DependentUpon>ListRandomiser_AddTempList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListRandomiser\ListRandomiser_ModifyList.resx">
       <DependentUpon>ListRandomiser_ModifyList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListRandomiser\ListRandomiser_Settings.resx">
+      <DependentUpon>ListRandomiser_Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Menu.resx">
       <DependentUpon>Main Menu.cs</DependentUpon>
@@ -118,6 +140,9 @@
       <Project>{521573bd-aa1d-44c7-8c7d-87a300e343af}</Project>
       <Name>General Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

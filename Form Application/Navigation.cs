@@ -49,6 +49,10 @@ namespace FormApplication
                 {
                     newForm = new ListRandomiser.ListRandomiser_ModifyList(NextForm.Item2[0] as ListRandomiserApp);
                 }
+                else if (NextForm.Item1 == Forms.ListRandomiser_Settings)
+                {
+                    newForm = new ListRandomiser.ListRandomiser_Settings(NextForm.Item2[0] as ListRandomiserApp);
+                }
                 else
                 {
                     newForm = new Form();
